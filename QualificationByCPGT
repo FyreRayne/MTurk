@@ -1,0 +1,31 @@
+import boto3
+
+# Replace with your AWS access key and secret key
+aws_access_key_id = 'YOUR_ACCESS_KEY'
+aws_secret_access_key = 'YOUR_SECRET_KEY'
+
+# Create a Boto3 client for MTurk
+mturk = boto3.client('mturk',
+    aws_access_key_id=aws_access_key_id,
+    aws_secret_access_key=aws_secret_access_key,
+    region_name='us-east-1'  # Replace with your desired AWS region
+)
+
+# Define the parameters for your QualificationType
+qualification_name = 'GraduatePsychologyQualification'
+qualification_description = 'This Qualification is for US graduate students in psychology or related programs.'
+keywords = ['psychology', 'graduate student', 'US']
+test_duration_in_seconds = 3600  # 1 hour
+qualification_status = 'Active'
+
+# Create the QualificationType
+response = mturk.create_qualification_type(
+    Name=qualification_name,
+    Description=qualification_description,
+    Keywords=', '.join(keywords),
+    TestDurationInSeconds=test_duration_in_seconds,
+    QualificationTypeStatus=qualification_status
+)
+
+# Print the QualificationType ID
+print('QualificationType ID:', response['QualificationType']['QualificationTypeId'])
