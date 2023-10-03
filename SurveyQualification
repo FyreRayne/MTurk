@@ -1,0 +1,11 @@
+school = input("What is the name of the college you attened?")
+mascot = input("What is the name of the college mascot?")
+major = input("What was/is your college major?")
+age = input("How old are you?")
+zodiac = input("What is your zodiac sign?")
+degree = input("What degree are you pursuing? ex. Bachelors, Masters, Professional/Doctorate, Certificate")
+year = input("What year will you/did you graduate?")
+dob = input("Please write out the day, month, and year you were born in words:")
+Chinese = input("If you know your Chinese zodiac, please enter it here:")
+human1 = input("Do you believe that your zodiac sign contributed to your decision in choosing a college major?")
+
